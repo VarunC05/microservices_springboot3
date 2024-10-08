@@ -34,8 +34,13 @@ public class DepartmentController {
 
     @GetMapping("/with-employees")
     public List<Department> findAllWithEmployees(){
-        List<Department> departments = departmentRepository.findAll();
-        departments.forEach( department-> department.setEmployees(employeeClient.findByDepartment(department.getId())));
-        return departments;
+        try {
+            List<Department> departments = departmentRepository.findAll();
+            departments.forEach(department -> department.setEmployees(employeeClient.findByDepartment(department.getId())));
+            return departments;
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }

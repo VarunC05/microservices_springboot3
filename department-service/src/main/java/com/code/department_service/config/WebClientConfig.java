@@ -27,7 +27,7 @@ public class WebClientConfig {
     @Bean
     public EmployeeClient employeeClient(){
         HttpServiceProxyFactory httpServiceProxyFactory =
-                HttpServiceProxyFactory.builder(WebClientAdapter.forClient(employeeWebClient()))
+                HttpServiceProxyFactory.builderFor(WebClientAdapter.create(employeeWebClient()))
                         .build();
         return httpServiceProxyFactory.createClient(EmployeeClient.class);
 

@@ -31,8 +31,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/department/{departmentId}")
-    public List<Employee> findByDepartment(@PathVariable Long id){
-        return employeeRepository.findByDepartment(id);
+    public List<Employee> findByDepartment(@PathVariable Long departmentId){
+        return employeeRepository.findByDepartment(departmentId);
     }
 
 }

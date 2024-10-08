@@ -11,6 +11,6 @@ import java.util.List;
 @HttpExchange
 public interface EmployeeClient {
     @GetExchange("/employee/department/{departmentId}")
-    public List<Employee> findByDepartment(@PathVariable Long id);
+    public List<Employee> findByDepartment(@PathVariable Long departmentId);
 }
 
